@@ -7,6 +7,7 @@ const Column = (props) => {
   return (
     <div>
       <DragDropContext onDragEnd={() => {}}>
+        {props.column.title}
         <TaskList />
       </DragDropContext>
     </div>
