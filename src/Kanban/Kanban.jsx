@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import Column from "./Column";
 import mockState from "../mock-state";
 
@@ -12,7 +12,6 @@ const useStyles = makeStyles({
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     color: "white",
-    height: 48,
     padding: "0 30px",
   },
 });
@@ -22,8 +21,8 @@ const Kanban = (props) => {
   const [data, setData] = useState(mockState);
 
   return (
-    <div>
-      <Container className={classes.root}>Jarrod's Kanban Bored</Container>
+    <Container>
+      <Box className={classes.root}>Jarrod's Kanban Bored</Box>
       This is my kanban board coz im bored.
       {data.columnOrder.map((columnId) => {
         const col = data.columns[columnId];
@@ -31,7 +30,7 @@ const Kanban = (props) => {
 
         return <Column key={col.id} column={col} tasks={tasks} />;
       })}
-    </div>
+    </Container>
   );
 };
 

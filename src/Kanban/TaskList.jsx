@@ -20,6 +20,9 @@ const TaskList = (props) => {
             </div>
         )}
       </Droppable> */}
+      {props.tasks.map((task) => {
+        return <Task task={task} />;
+      })}
     </div>
   );
 };
